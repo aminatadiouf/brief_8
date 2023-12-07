@@ -26,6 +26,7 @@ class ReservationController extends Controller
     {
 
         $events = Evenement::find($id);
+        
         return view('reservation.reservationUser',compact('events'));
     }
 
@@ -78,7 +79,6 @@ class ReservationController extends Controller
     {
         try {
             
-
         
         $validated = $request->validate([
 
@@ -90,7 +90,7 @@ class ReservationController extends Controller
 
         ]);
              
-        dd($validated['evenement_id']);
+        
         // Reservation::create([
         //     'nombre_de_place' =>$validated['nombre_de_place'],
     
@@ -124,12 +124,12 @@ class ReservationController extends Controller
     /**
      * Display the specified resource.
      */
-// public function affiche($reserv)
-// {
+public function affiche()
+{
+    $reserv = Reservation::all();
     
-  
-//     return view('reservation.listeReservation',compact('reserv'));
-// }
+    return view('reservation.listeReservation',compact('reserv'));
+}
 
     public function show($reserv,$events)
     { 

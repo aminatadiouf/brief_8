@@ -21,6 +21,7 @@
   <h3 class="card-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Details réservation</font></font></h3>
   <div class="card-body">
     <h5 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nom de l'utilisateur: {{$reservation->user->name}}</font></font></h5>
+    
     <h6 class="card-subtitle text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nom de l'événement : {{ $reservation->evenement->libelle }}</font></font></h6>
   </div>
   <input type="hidden" name="evenement_id" value="{{ $reservation->evenement->id }}">
@@ -36,7 +37,7 @@
   </ul>
 
 
-  <div class="card-body"> <a href={{ route('reservationUser') }}button class="btn btn-primary btn-lg">Accepté</button></a>
+  <div class="card-body"> <a href={{ route('resercationAccept',$reservation->id) }}button class="btn btn-primary btn-lg">Accepté</button></a>
   <a href={{ route("reservationdecline",$reservation->id) }} button class="btn btn-primary">décliné</button></a>
   </div>
 </div>

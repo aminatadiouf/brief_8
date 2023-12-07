@@ -24,7 +24,7 @@ class Reservation extends Model
 
     public function evenement()
     {
-        return $this->belongsTo(Evenement::class, 'foreign_key');
+        return $this->belongsTo(Evenement::class);
     }
   
 

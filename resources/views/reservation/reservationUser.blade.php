@@ -18,7 +18,8 @@
     <div class="row justify-content-around">
       <div class="card   mt-5 w-25 h-50">
     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-<input type="hidden" name="evenement_id" id="evenement_id">
+   
+<input type="hidden" name="evenement_id" id="evenement_id" value="{{ $events->id }}">
 
 
     <div class="form-floating mb-3">
